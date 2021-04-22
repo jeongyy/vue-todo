@@ -6,11 +6,12 @@
 		</span>
 
 		<Modal v-if="showModal" @close="showModal = false">
-			<h3 slot="header">경고!!</h3>
+			<h3 slot="header">
+				경고!
+				<i class="closeModalBtn fas fa-times" @click="showModal = false"></i>
+			</h3>
 
 			<div slot="body">BODY</div>
-
-			<div slot="footer">FOOTER</div>
 
 		</Modal>
 	</div>
@@ -23,7 +24,7 @@ export default {
 	components: {
 		Modal,
 	},
-	data: function() {
+	data() {
 		return {
 			newTodoItem: "",
 			showModal: false,
@@ -69,5 +70,8 @@ input:focus {
 .addBtn {
 	color: white;
 	vertical-align: middle;
+}
+.closeModalBtn {
+	color: #42b983;
 }
 </style>
